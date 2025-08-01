@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 5000;
 const corsOptions = {
   origin: [
     "http://localhost:3000",
+    "https://maplenamu-realestate.vercel.app",
     "https://property-pilot.vercel.app",
     "https://property-pilot-git-main-silverraining.vercel.app",
     "https://property-pilot-silverraining.vercel.app",

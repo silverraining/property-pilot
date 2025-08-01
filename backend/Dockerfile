@@ -19,7 +19,7 @@ COPY . .
 RUN pnpm run build
 
 # Expose port
-EXPOSE 3000
+EXPOSE 5000
 
 # Start the application
 CMD ["node", "dist/index.js"] 
