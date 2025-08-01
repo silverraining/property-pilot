@@ -10,19 +10,31 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// CORS configuration for production
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "https://property-pilot.vercel.app",
+    "https://property-pilot-git-main-silverraining.vercel.app",
+    "https://property-pilot-silverraining.vercel.app",
+    /\.vercel\.app$/, // 모든 Vercel 도메인 허용
+  ],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
-// Routes
+// Health check endpoint
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", message: "Property Pilot API is running" });
+});
+
+// API routes
 app.post("/api/calculate-closing-costs", calculateClosingCosts);
 app.post("/api/calculate-occupancy-costs", calculateOccupancyCosts);
 app.post("/api/calculate-mortgage", calculateMortgage);
-
-// Health check
-app.get("/api/health", (req, res) => {
-  res.json({ status: "OK", message: "Property Calculator API is running" });
-});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);
