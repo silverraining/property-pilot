@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://property-pilot-be.onrender.com";
 
 export const api = {
   async post(endpoint: string, data: Record<string, unknown>) {
@@ -85,7 +85,7 @@ export const calculateClosingCostsAPI = async (
   data: ClosingCostsRequest
 ): Promise<ClosingCostsResponse> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/calculate-closing-costs`, {
+    const response = await fetch(`${API_BASE_URL}/api/calculate-closing-costs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export const calculateOccupancyCostsAPI = async (
   data: OccupancyCostsRequest
 ): Promise<OccupancyCostsResponse> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/calculate-occupancy-costs`, {
+    const response = await fetch(`${API_BASE_URL}/api/calculate-occupancy-costs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -131,7 +131,7 @@ export const calculateMortgageAPI = async (
   data: MortgageRequest
 ): Promise<MortgageResponse> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/calculate-mortgage`, {
+    const response = await fetch(`${API_BASE_URL}/api/calculate-mortgage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
