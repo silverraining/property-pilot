@@ -10,7 +10,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --no-optional
 
 # Copy source code
 COPY . .
@@ -22,4 +22,4 @@ RUN pnpm run build
 EXPOSE 3000
 
 # Start the application
-CMD ["pnpm", "start"] 
+CMD ["node", "dist/index.js"] 
