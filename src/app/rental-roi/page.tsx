@@ -437,7 +437,7 @@ export default function RentalROICalculator() {
                   fallback={
                     <button
                       onClick={resetForm}
-                      className="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-600 transition-colors"
+                      className="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-600 transition-colors cursor-pointer"
                     >
                       Reset
                     </button>
@@ -445,7 +445,7 @@ export default function RentalROICalculator() {
                 >
                   <button
                     onClick={resetForm}
-                    className="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-600 transition-colors"
+                    className="flex-1 bg-gray-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-gray-600 transition-colors cursor-pointer"
                   >
                     {t("common.reset")}
                   </button>
