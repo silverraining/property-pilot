@@ -2,9 +2,11 @@
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { ClientOnly } from "../components/ClientOnly";
+import { useLanguageStyles } from "../utils/languageUtils";
 
 export default function Home() {
   const { t } = useTranslation();
+  const { koreanTextClass } = useLanguageStyles();
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -20,12 +22,6 @@ export default function Home() {
               <ClientOnly
                 fallback={
                   <>
-                    <Link
-                      href="/"
-                      className="text-gray-700 hover:text-primary-blue font-medium"
-                    >
-                      ← Back to Home
-                    </Link>
                     <Link
                       href="/mortgage"
                       className="text-gray-700 hover:text-primary-blue font-medium"
@@ -53,12 +49,6 @@ export default function Home() {
                   </>
                 }
               >
-                <Link
-                  href="/"
-                  className="text-gray-700 hover:text-primary-blue font-medium"
-                >
-                  {t("common.backToHome")}
-                </Link>
                 <Link
                   href="/mortgage"
                   className="text-gray-700 hover:text-primary-blue font-medium"
@@ -410,7 +400,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {t("home.mortgage.title")}
                 </h3>
-                <p className="text-gray-600">
+                <p className={`text-gray-600 ${koreanTextClass}`}>
                   {t("home.mortgage.description")}
                 </p>
               </ClientOnly>
@@ -465,7 +455,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {t("home.closingCosts.title")}
                 </h3>
-                <p className="text-gray-600">
+                <p className={`text-gray-600 ${koreanTextClass}`}>
                   {t("home.closingCosts.description")}
                 </p>
               </ClientOnly>
@@ -524,7 +514,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {t("home.occupancyCosts.title")}
                 </h3>
-                <p className="text-gray-600">
+                <p className={`text-gray-600 ${koreanTextClass}`}>
                   {t("home.occupancyCosts.description")}
                 </p>
               </ClientOnly>
@@ -583,7 +573,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {t("home.rentalROI.title")}
                 </h3>
-                <p className="text-gray-600">
+                <p className={`text-gray-600 ${koreanTextClass}`}>
                   {t("home.rentalROI.description")}
                 </p>
               </ClientOnly>

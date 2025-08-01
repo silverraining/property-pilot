@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { calculateMortgageAPI } from "../../utils/api";
 import { ClientOnly } from "../../components/ClientOnly";
+import { useLanguageStyles } from "../../utils/languageUtils";
 
 // Format currency with proper handling
 const formatCurrency = (amount: number | null | undefined): string => {
@@ -34,6 +35,7 @@ const parseNumber = (value: string): number => {
 
 export default function MortgageCalculator() {
   const { t } = useTranslation();
+  const { koreanTextClass } = useLanguageStyles();
   const [propertyPrice, setPropertyPrice] = useState("");
   const [downPaymentPercent, setDownPaymentPercent] = useState("");
   const [interestRate, setInterestRate] = useState("");
@@ -390,7 +392,9 @@ export default function MortgageCalculator() {
                   </p>
                 }
               >
-                <p className="text-gray-500 text-center py-8">
+                <p
+                  className={`text-gray-500 text-center py-8 ${koreanTextClass}`}
+                >
                   {t("mortgage.enterDetails")}
                 </p>
               </ClientOnly>
