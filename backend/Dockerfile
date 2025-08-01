@@ -7,13 +7,13 @@ RUN npm install -g pnpm@8.15.0
 WORKDIR /app
 
 # Copy package files
-COPY backend/package.json backend/pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
 
 # Copy source code
-COPY backend/ .
+COPY . .
 
 # Build the application
 RUN pnpm run build
