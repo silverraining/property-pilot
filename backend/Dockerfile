@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-# Install pnpm globally
+# Install pnpm using npm
 RUN npm install -g pnpm@8.15.0
 
 # Set working directory
@@ -9,9 +9,8 @@ WORKDIR /app
 # Copy package files
 COPY package.json pnpm-lock.yaml ./
 
-# Install dependencies with retry
-RUN pnpm install --frozen-lockfile --no-optional || \
-    (sleep 5 && pnpm install --frozen-lockfile --no-optional)
+# Install dependencies
+RUN pnpm install --frozen-lockfile
 
 # Copy source code
 COPY . .
