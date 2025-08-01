@@ -68,5 +68,5 @@ export interface TypedRequestBody<T> extends Request {
 }
 
 export interface TypedResponse<T> extends Response {
-  json: (body: T) => TypedResponse<T>;
+  json: (body: T) => this;
 }
