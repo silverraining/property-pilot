@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  basePath: "/portfolios/real-estate",
   eslint: {
     ignoreDuringBuilds: true,
   },

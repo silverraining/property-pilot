@@ -1,32 +1,8 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://property-pilot-be.onrender.com";
-
-export const api = {
-  async post(endpoint: string, data: Record<string, unknown>) {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.statusText}`);
-    }
-
-    return response.json();
-  },
-
-  async get(endpoint: string) {
-    const response = await fetch(`${API_BASE_URL}${endpoint}`);
-
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.statusText}`);
-    }
-
-    return response.json();
-  },
-};
+import {
+  calculateClosingCostsLogic,
+  calculateOccupancyCostsLogic,
+  calculateMortgageLogic,
+} from "./calculations";
 
 export interface ClosingCostsRequest {
   propertyPrice: number;
@@ -80,26 +56,30 @@ export interface MortgageResponse {
   error?: string;
 }
 
-// API 호출 함수들
+// Client-side calculation functions
 export const calculateClosingCostsAPI = async (
   data: ClosingCostsRequest
 ): Promise<ClosingCostsResponse> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/calculate-closing-costs`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const result = calculateClosingCostsLogic(
+      data.propertyPrice,
+      data.hstAmount,
+      data.hstRebated,
+      data.landTransferTax,
+      data.devCharge,
+      data.lawyerFee,
+      data.includeAgentCommission
+    );
 
-    const result = await response.json();
-    return result;
+    return {
+      success: true,
+      data: result,
+    };
   } catch (error) {
-    console.error("Error calling closing costs API:", error);
+    console.error("Error calculating closing costs:", error);
     return {
       success: false,
-      error: "Failed to connect to server. Please try again.",
+      error: "Failed to calculate closing costs. Please try again.",
     };
   }
 };
@@ -108,21 +88,21 @@ export const calculateOccupancyCostsAPI = async (
   data: OccupancyCostsRequest
 ): Promise<OccupancyCostsResponse> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/calculate-occupancy-costs`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const result = calculateOccupancyCostsLogic(
+      data.lawyerFee,
+      data.occupancyFee,
+      data.months
+    );
 
-    const result = await response.json();
-    return result;
+    return {
+      success: true,
+      data: result,
+    };
   } catch (error) {
-    console.error("Error calling occupancy costs API:", error);
+    console.error("Error calculating occupancy costs:", error);
     return {
       success: false,
-      error: "Failed to connect to server. Please try again.",
+      error: "Failed to calculate occupancy costs. Please try again.",
     };
   }
 };
@@ -131,21 +111,21 @@ export const calculateMortgageAPI = async (
   data: MortgageRequest
 ): Promise<MortgageResponse> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/calculate-mortgage`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const result = calculateMortgageLogic(
+      data.propertyPrice,
+      data.downPaymentPercent,
+      data.interestRate
+    );
 
-    const result = await response.json();
-    return result;
+    return {
+      success: true,
+      data: result,
+    };
   } catch (error) {
-    console.error("Error calling mortgage API:", error);
+    console.error("Error calculating mortgage:", error);
     return {
       success: false,
-      error: "Failed to connect to server. Please try again.",
+      error: "Failed to calculate mortgage. Please try again.",
     };
   }
 };
