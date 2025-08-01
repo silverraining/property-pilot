@@ -273,7 +273,7 @@ export default function MortgageCalculator() {
                     <button
                       onClick={calculateMortgage}
                       disabled={isLoading}
-                      className="flex-1 bg-primary-blue text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex-1 bg-primary-blue text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                     >
                       {isLoading ? "Calculating..." : "Calculate"}
                     </button>
@@ -282,7 +282,7 @@ export default function MortgageCalculator() {
                   <button
                     onClick={calculateMortgage}
                     disabled={isLoading}
-                    className="flex-1 bg-primary-blue text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 bg-primary-blue text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isLoading
                       ? t("common.calculating")
@@ -319,7 +319,7 @@ export default function MortgageCalculator() {
               }
             >
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-                {t("mortgage.resultsTitle")}
+                {t("mortgage.mortgageBreakdown")}
               </h2>
             </ClientOnly>
 
