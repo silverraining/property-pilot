@@ -105,6 +105,21 @@ export default function OccupancyCostCalculator() {
     setError(null);
   };
 
+  // Translation mapping for cost breakdown items
+  const getCostItemTranslation = (key: string) => {
+    switch (key) {
+      case "lawyerFee":
+        return t("occupancyCosts.fields.lawyerFee");
+      case "occupancyFee":
+        return t("occupancyCosts.results.occupancyFeeMonths", {
+          months: months,
+          plural: parseInt(months) > 1 ? "s" : "",
+        });
+      default:
+        return key;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-100">
       <div className="max-w-4xl mx-auto px-4 py-8">
@@ -342,12 +357,7 @@ export default function OccupancyCostCalculator() {
                       className="flex justify-between items-center py-2 border-b border-gray-100"
                     >
                       <span className="text-sm text-gray-600">
-                        {item === "Occupancy Fee"
-                          ? t("occupancyCosts.results.occupancyFeeMonths", {
-                              months: months,
-                              plural: parseInt(months) > 1 ? "s" : "",
-                            })
-                          : item}
+                        {getCostItemTranslation(item)}
                       </span>
                       <span className="font-semibold text-gray-900">
                         {formatCurrency(cost)}

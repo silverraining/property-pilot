@@ -110,10 +110,10 @@ export default function ClosingCostsCalculator() {
           totalWithAgent: totalWithAgentResult,
         } = response.data;
 
-        // Create breakdown for display
+        // Create breakdown for display with translation keys
         const costBreakdown = {
           ...basicClosingCosts,
-          "Agent Commission": agentCommission,
+          agentCommission: agentCommission,
         };
 
         setBreakdown(costBreakdown);
@@ -141,6 +141,24 @@ export default function ClosingCostsCalculator() {
     setTotalCosts(null);
     setTotalWithAgent(null);
     setError(null);
+  };
+
+  // Translation mapping for cost breakdown items
+  const getCostItemTranslation = (key: string) => {
+    switch (key) {
+      case "hst":
+        return t("closingCosts.fields.hstAmount");
+      case "landTransferTax":
+        return t("closingCosts.fields.landTransferTax");
+      case "devCharge":
+        return t("closingCosts.fields.devCharge");
+      case "lawyerFee":
+        return t("closingCosts.fields.lawyerFee");
+      case "agentCommission":
+        return t("closingCosts.results.agentCommissionIfSold");
+      default:
+        return key;
+    }
   };
 
   return (
@@ -335,7 +353,7 @@ export default function ClosingCostsCalculator() {
                     htmlFor="agentCommission"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Agent Commission (5% of Property Price)
+                    {t("closingCosts.fields.agentCommission")}
                   </label>
                   <div className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-gray-50 text-gray-600 cursor-not-allowed">
                     {propertyPrice
@@ -343,7 +361,7 @@ export default function ClosingCostsCalculator() {
                       : "$0"}
                   </div>
                   <p className="text-xs text-gray-500 mt-1">
-                    Automatically calculated as 5% of Property Price
+                    {t("closingCosts.fields.autoCalculated")}
                   </p>
                 </div>
               )}
@@ -427,9 +445,7 @@ export default function ClosingCostsCalculator() {
                       className="flex justify-between items-center py-2 border-b border-gray-100"
                     >
                       <span className="text-sm text-gray-600">
-                        {item === "Agent Commission"
-                          ? t("closingCosts.results.agentCommissionIfSold")
-                          : item}
+                        {getCostItemTranslation(item)}
                       </span>
                       <span className="font-semibold text-gray-900">
                         {formatCurrency(cost)}

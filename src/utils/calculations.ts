@@ -37,12 +37,11 @@ export const calculateClosingCostsLogic = (
   // Calculate Agent Commission automatically as 5% of property price
   const agentCommission = includeAgentCommission ? propertyPrice * 0.05 : 0;
 
-  // Basic closing costs (excluding Agent Commission)
   const basicClosingCosts = {
-    HST: hstRebated ? 0 : hstAmount,
-    "Land Transfer Tax": landTransferTax,
-    "Dev. Charge": devCharge,
-    "Lawyer Fee": lawyerFee,
+    hst: hstRebated ? 0 : hstAmount,
+    landTransferTax: landTransferTax,
+    devCharge: devCharge,
+    lawyerFee: lawyerFee,
   };
 
   // Calculate totals
@@ -70,8 +69,8 @@ export const calculateOccupancyCostsLogic = (
   const totalOccupancyFee = occupancyFee * months;
 
   const costBreakdown = {
-    "Lawyer Fee": lawyerFee,
-    "Occupancy Fee": totalOccupancyFee,
+    lawyerFee: lawyerFee,
+    occupancyFee: totalOccupancyFee,
   };
 
   const totalCosts = Object.values(costBreakdown).reduce(
@@ -105,4 +104,4 @@ export const calculateMortgageLogic = (
     downPayment,
     loanAmount,
   };
-}; 
+};
