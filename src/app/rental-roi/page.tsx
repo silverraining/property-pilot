@@ -420,7 +420,7 @@ export default function RentalROICalculator() {
                   fallback={
                     <button
                       onClick={calculateROI}
-                      className="flex-1 bg-green-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-green-600 transition-colors"
+                      className="flex-1 bg-green-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-green-600 transition-colors cursor-pointer"
                     >
                       Calculate
                     </button>
@@ -428,7 +428,7 @@ export default function RentalROICalculator() {
                 >
                   <button
                     onClick={calculateROI}
-                    className="flex-1 bg-green-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-green-600 transition-colors"
+                    className="flex-1 bg-green-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-green-600 transition-colors cursor-pointer"
                   >
                     {t("common.calculate")}
                   </button>

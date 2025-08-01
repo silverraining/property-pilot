@@ -361,7 +361,7 @@ export default function ClosingCostsCalculator() {
                   className={`flex-1 py-3 px-6 rounded-lg transition-colors font-medium ${
                     isLoading
                       ? "bg-gray-400 text-gray-200 cursor-not-allowed"
-                      : "bg-blue-600 text-white hover:bg-blue-700"
+                      : "bg-blue-600 text-white hover:bg-blue-700 cursor-pointer"
                   }`}
                 >
                   {isLoading ? t("common.calculating") : t("common.calculate")}

@@ -269,7 +269,7 @@ export default function OccupancyCostCalculator() {
                   <button
                     onClick={calculateOccupancyCosts}
                     disabled={isLoading}
-                    className="flex-1 bg-orange-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 bg-orange-500 text-white py-3 px-6 rounded-lg font-medium hover:bg-orange-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                   >
                     {isLoading
                       ? t("common.calculating")
