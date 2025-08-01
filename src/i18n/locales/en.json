@@ -1,0 +1,188 @@
+{
+  "common": {
+    "backToHome": "← Back to Home",
+    "calculate": "Calculate",
+    "calculating": "Calculating...",
+    "reset": "Reset",
+    "total": "Total",
+    "note": "Note",
+    "enterDetails": "Enter your details and click Calculate to see results",
+    "estimated": "These are estimated costs. Actual costs may vary based on your specific situation and location."
+  },
+  "home": {
+    "title": "Property Investment Calculators",
+    "subtitle": "Professional tools for property investment analysis",
+    "advantages": {
+      "title": "Why Use Our Calculators?",
+      "subtitle": "Professional tools designed to help you make better real estate decisions",
+      "instantAnswers": {
+        "title": "Instant Answers",
+        "description": "Get quick results like mortgage payments and closing costs without waiting for manual calculations."
+      },
+      "betterDecisions": {
+        "title": "Better Decisions",
+        "description": "Compare different scenarios and feel confident making informed choices about your real estate investments."
+      },
+      "convenience": {
+        "title": "24/7 Convenience",
+        "description": "Access professional calculations anytime, anywhere. No need to wait for business hours."
+      },
+      "savesTime": {
+        "title": "Saves You Time",
+        "description": "Reduce repetitive questions and manual calculations, so you can focus on high-value tasks."
+      },
+      "generatesLeads": {
+        "title": "Generates Leads",
+        "description": "Engaging tools capture interest and provide valuable information for your business."
+      },
+      "professional": {
+        "title": "Professional & Accurate",
+        "description": "Industry-standard formulas and up-to-date rates build trust and reduce calculation errors."
+      }
+    },
+    "closingCosts": {
+      "title": "Closing Costs",
+      "description": "Calculate total closing costs for property purchase",
+      "button": "Calculate Closing<br/>Costs"
+    },
+    "mortgage": {
+      "title": "Mortgage",
+      "description": "Calculate monthly mortgage payments and costs",
+      "button": "Calculate<br/>Mortgage"
+    },
+    "occupancyCosts": {
+      "title": "Occupancy Costs",
+      "description": "Calculate occupancy costs including lawyer fees",
+      "button": "Calculate<br/>Occupancy Costs"
+    },
+    "rentalROI": {
+      "title": "Rental ROI",
+      "description": "Calculate rental return on investment",
+      "button": "Calculate<br/>Rental ROI"
+    }
+  },
+  "closingCosts": {
+    "title": "Closing Costs Calculator",
+    "subtitle": "Estimate your closing costs based on property and location",
+    "propertyDetails": "Property Details",
+    "closingCostsBreakdown": "Closing Costs Breakdown",
+    "fields": {
+      "propertyPrice": "Property Price",
+      "hstAmount": "HST Amount",
+      "hstRebated": "HST Rebated?",
+      "hstNotApplicable": "(Not applicable when HST is rebated)",
+      "landTransferTax": "Land Transfer Tax",
+      "devCharge": "Development Charge",
+      "lawyerFee": "Lawyer Fee",
+      "includeAgentCommission": "Include Agent Commission?",
+      "agentCommission": "Agent Commission (5% of Property Price)",
+      "autoCalculated": "Automatically calculated as 5% of Property Price"
+    },
+    "results": {
+      "totalClosingCosts": "Total Closing Costs",
+      "totalWithAgentCommission": "Total with Agent Commission (if Sold)",
+      "totalCashNeeded": "Total Cash Needed on Closing Day",
+      "agentCommissionIfSold": "Agent Commission (if Sold)"
+    },
+    "placeholders": {
+      "propertyPrice": "500,000",
+      "hstAmount": "24,000",
+      "notApplicable": "Not applicable",
+      "landTransferTax": "10,000",
+      "devCharge": "20,000",
+      "lawyerFee": "1,469"
+    },
+    "options": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "enterDetails": "Enter your property details and click Calculate to see closing costs breakdown"
+  },
+  "mortgage": {
+    "title": "Mortgage Calculator",
+    "subtitle": "Calculate your monthly mortgage payment and total costs",
+    "inputDetails": "Input Details",
+    "resultsTitle": "Mortgage Calculation Results",
+    "fields": {
+      "propertyPrice": "Property Price",
+      "downPayment": "Down Payment (%)",
+      "interestRate": "Interest Rate (%)"
+    },
+    "results": {
+      "monthlyPayment": "Monthly Payment",
+      "downPayment": "Down Payment",
+      "loanAmount": "Loan Amount"
+    },
+    "placeholders": {
+      "propertyPrice": "500,000",
+      "downPayment": "20",
+      "interestRate": "6.5"
+    },
+    "enterDetails": "Enter your details and click Calculate to see results"
+  },
+  "occupancyCosts": {
+    "title": "Occupancy Cost Calculator",
+    "subtitle": "Calculate your occupancy costs including lawyer fees and monthly fees",
+    "costDetails": "Cost Details",
+    "occupancyCostBreakdown": "Occupancy Cost Breakdown",
+    "fields": {
+      "lawyerFee": "Lawyer Fee",
+      "occupancyFee": "Occupancy Fee (Monthly)",
+      "months": "Number of Months"
+    },
+    "results": {
+      "totalOccupancyCosts": "Total Occupancy Costs",
+      "occupancyFeeMonths": "Occupancy Fee ({{months}} month{{plural}})"
+    },
+    "placeholders": {
+      "lawyerFee": "622",
+      "occupancyFee": "3000",
+      "months": "1"
+    },
+    "enterDetails": "Enter your cost details and click Calculate to see occupancy costs breakdown"
+  },
+  "rentalROI": {
+    "title": "Rental ROI Calculator",
+    "subtitle": "Calculate your rental return on investment and cash flow analysis",
+    "propertyDetails": "Property Details",
+    "roiResults": "ROI Results",
+    "fields": {
+      "propertyPrice": "Property Price",
+      "monthlyRent": "Monthly Rent",
+      "downPayment": "Down Payment",
+      "interestRate": "Interest Rate (%)",
+      "loanTerm": "Loan Term (Years)",
+      "monthlyExpenses": "Monthly Expenses",
+      "vacancyRate": "Vacancy Rate (%)"
+    },
+    "results": {
+      "monthlyCashFlow": "Monthly Cash Flow",
+      "annualCashFlow": "Annual Cash Flow",
+      "cashOnCashROI": "Cash-on-Cash ROI",
+      "capRate": "Cap Rate",
+      "totalROI": "Total ROI (with Appreciation)"
+    },
+    "placeholders": {
+      "propertyPrice": "500,000",
+      "monthlyRent": "3,000",
+      "downPayment": "100,000",
+      "interestRate": "6.5",
+      "monthlyExpenses": "500",
+      "vacancyRate": "5"
+    },
+    "enterDetails": "Enter your property details and click Calculate to see ROI results"
+  },
+  "errors": {
+    "validPropertyPrice": "Please enter a valid property price.",
+    "validHstAmount": "Please enter a valid HST amount.",
+    "validLandTransferTax": "Please enter a valid Land Transfer Tax amount.",
+    "validDevCharge": "Please enter a valid Development Charge amount.",
+    "validLawyerFee": "Please enter a valid Lawyer Fee amount.",
+    "validDownPayment": "Please enter valid numbers for all fields. Down payment percentage must be between 0 and 100.",
+    "validInterestRate": "Please enter a valid interest rate.",
+    "validOccupancyFee": "Please enter a valid occupancy fee.",
+    "validMonths": "Please enter a valid number of months (minimum 1).",
+    "serverError": "Failed to connect to server. Please try again.",
+    "calculationError": "Failed to calculate costs."
+  }
+}

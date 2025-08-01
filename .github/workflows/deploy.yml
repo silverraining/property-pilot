@@ -1,0 +1,71 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: |
+        npm install -g pnpm
+        pnpm install
+        
+    - name: Build frontend
+      run: pnpm build
+      
+    - name: Build backend
+      run: |
+        cd backend
+        pnpm install
+        pnpm build
+        
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        
+    - name: Add server to known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
+        
+    - name: Deploy to server
+      run: |
+        # Create deployment directory
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p /var/www/property-pilot"
+        
+        # Copy frontend files
+        scp -r .next ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/property-pilot/
+        scp -r public ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/property-pilot/
+        scp package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/property-pilot/
+        scp next.config.ts ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/property-pilot/
+        
+        # Copy backend files
+        scp -r backend/dist ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/property-pilot/backend/
+        scp backend/package.json ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/var/www/property-pilot/backend/
+        
+        # Install dependencies and restart services
+        ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "
+          cd /var/www/property-pilot
+          npm install -g pnpm
+          pnpm install --prod
+          cd backend
+          pnpm install --prod
+          sudo systemctl restart property-pilot-frontend
+          sudo systemctl restart property-pilot-backend
+        " 

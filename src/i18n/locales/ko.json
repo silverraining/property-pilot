@@ -1,0 +1,157 @@
+{
+  "common": {
+    "backToHome": "← 홈으로 돌아가기",
+    "calculate": "계산",
+    "calculating": "계산 중...",
+    "reset": "초기화",
+    "total": "총계",
+    "note": "참고",
+    "enterDetails": "세부사항을 입력하고 계산을 클릭하여 결과를 확인하세요",
+    "estimated": "이것은 추정 비용입니다. 실제 비용은 귀하의 특정 상황과 위치에 따라 달라질 수 있습니다."
+  },
+  "home": {
+    "title": "부동산 투자 계산기",
+    "subtitle": "부동산 투자 분석을 위한 전문 도구",
+    "advantages": {
+      "title": "왜 Property Pilot를 사용하나요?",
+      "subtitle": "더 나은 부동산 결정을 내리는 데 도움이 되는 전문 도구",
+      "instantAnswers": {
+        "title": "즉시 답변",
+        "description": "수동 계산을 기다리지 않고 모기지 상환금과 마감 비용과 같은 빠른 결과를 얻으세요."
+      },
+      "betterDecisions": {
+        "title": "더 나은 결정",
+        "description": "다양한 시나리오를 비교하고 부동산 투자에 대한 정보에 기반한 선택을 자신 있게 하세요."
+      },
+      "convenience": {
+        "title": "24/7 편의성",
+        "description": "언제 어디서나 전문 계산에 접근하세요. 영업 시간을 기다릴 필요가 없습니다."
+      },
+      "savesTime": {
+        "title": "시간 절약",
+        "description": "반복적인 질문과 수동 계산을 줄여 고가치 작업에 집중할 수 있습니다."
+      },
+      "generatesLeads": {
+        "title": "리드 생성",
+        "description": "매력적인 도구가 관심을 끌고 비즈니스를 위한 가치 있는 정보를 제공합니다."
+      },
+      "professional": {
+        "title": "전문적이고 정확함",
+        "description": "업계 표준 공식과 최신 요율로 신뢰를 구축하고 계산 오류를 줄입니다."
+      }
+    },
+    "closingCosts": {
+      "title": "마감 비용",
+      "description": "부동산 구매 시 총 마감 비용 계산",
+      "button": "마감 비용<br/>계산하기"
+    },
+    "mortgage": {
+      "title": "모기지",
+      "description": "월별 모기지 상환금 및 비용 계산",
+      "button": "모기지<br/>계산하기"
+    },
+    "occupancyCosts": {
+      "title": "점유 비용",
+      "description": "변호사 수수료를 포함한 점유 비용 계산",
+      "button": "점유 비용<br/>계산하기"
+    },
+    "rentalROI": {
+      "title": "임대 수익률",
+      "description": "임대 투자 수익률 계산",
+      "button": "임대 수익률<br/>계산하기"
+    }
+  },
+  "closingCosts": {
+    "title": "마감 비용 계산기",
+    "subtitle": "부동산과 위치에 따른 마감 비용 추정",
+    "propertyDetails": "부동산 세부사항",
+    "closingCostsBreakdown": "마감 비용 세부내역",
+    "fields": {
+      "propertyPrice": "부동산 가격",
+      "hstAmount": "HST 금액",
+      "hstRebated": "HST 환급 여부?",
+      "hstNotApplicable": "(HST가 환급되면 적용되지 않음)",
+      "landTransferTax": "양도소득세",
+      "devCharge": "개발부담금",
+      "lawyerFee": "변호사 수수료",
+      "includeAgentCommission": "중개 수수료 포함?",
+      "agentCommission": "중개 수수료 (부동산 가격의 5%)",
+      "autoCalculated": "부동산 가격의 5%로 자동 계산됨"
+    },
+    "results": {
+      "totalClosingCosts": "총 마감 비용",
+      "totalWithAgentCommission": "중개 수수료 포함 총액 (매도 시)",
+      "totalCashNeeded": "마감일에 필요한 총 현금",
+      "agentCommissionIfSold": "중개 수수료 (매도 시)"
+    },
+    "placeholders": {
+      "propertyPrice": "500,000",
+      "hstAmount": "24,000",
+      "notApplicable": "해당 없음",
+      "landTransferTax": "10,000",
+      "devCharge": "20,000",
+      "lawyerFee": "1,469"
+    },
+    "options": {
+      "yes": "예",
+      "no": "아니오"
+    },
+    "enterDetails": "부동산 세부사항을 입력하고 계산을 클릭하여 마감 비용 세부내역을 확인하세요"
+  },
+  "mortgage": {
+    "title": "모기지 계산기",
+    "subtitle": "월별 모기지 상환금과 총 비용 계산",
+    "inputDetails": "입력 세부사항",
+    "resultsTitle": "모기지 계산 결과",
+    "fields": {
+      "propertyPrice": "부동산 가격",
+      "downPayment": "계약금 (%)",
+      "interestRate": "이자율 (%)"
+    },
+    "results": {
+      "monthlyPayment": "월 상환금",
+      "downPayment": "계약금",
+      "loanAmount": "대출 금액"
+    },
+    "placeholders": {
+      "propertyPrice": "500,000",
+      "downPayment": "20",
+      "interestRate": "6.5"
+    },
+    "enterDetails": "세부사항을 입력하고 계산을 클릭하여 결과를 확인하세요"
+  },
+  "occupancyCosts": {
+    "title": "점유 비용 계산기",
+    "subtitle": "변호사 수수료와 월별 수수료를 포함한 점유 비용 계산",
+    "costDetails": "비용 세부사항",
+    "occupancyCostBreakdown": "점유 비용 세부내역",
+    "fields": {
+      "lawyerFee": "변호사 수수료",
+      "occupancyFee": "점유 수수료 (월별)",
+      "months": "개월 수"
+    },
+    "results": {
+      "totalOccupancyCosts": "총 점유 비용",
+      "occupancyFeeMonths": "점유 수수료 ({{months}}개월)"
+    },
+    "placeholders": {
+      "lawyerFee": "622",
+      "occupancyFee": "3000",
+      "months": "1"
+    },
+    "enterDetails": "비용 세부사항을 입력하고 계산을 클릭하여 점유 비용 세부내역을 확인하세요"
+  },
+  "errors": {
+    "validPropertyPrice": "유효한 부동산 가격을 입력해 주세요.",
+    "validHstAmount": "유효한 HST 금액을 입력해 주세요.",
+    "validLandTransferTax": "유효한 양도소득세 금액을 입력해 주세요.",
+    "validDevCharge": "유효한 개발부담금 금액을 입력해 주세요.",
+    "validLawyerFee": "유효한 변호사 수수료를 입력해 주세요.",
+    "validDownPayment": "모든 필드에 유효한 숫자를 입력해 주세요. 계약금 비율은 0에서 100 사이여야 합니다.",
+    "validInterestRate": "유효한 이자율을 입력해 주세요.",
+    "validOccupancyFee": "유효한 점유 수수료를 입력해 주세요.",
+    "validMonths": "유효한 개월 수를 입력해 주세요 (최소 1개월).",
+    "serverError": "서버에 연결할 수 없습니다. 다시 시도해 주세요.",
+    "calculationError": "비용 계산에 실패했습니다."
+  }
+}

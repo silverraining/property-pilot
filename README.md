@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Property Pilot 🏠
 
-## Getting Started
+A full-stack property investment calculator application built with Next.js, TypeScript, and Express.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Calculators
+
+- **Closing Costs Calculator** - Calculate total closing costs for property purchase
+- **Mortgage Calculator** - Calculate monthly mortgage payments and costs
+- **Occupancy Costs Calculator** - Calculate occupancy costs including lawyer fees
+- **Rental ROI Calculator** - Calculate rental return on investment
+
+### Key Features
+
+- Real-time calculations via API calls
+- Multi-language support (English, French, Korean)
+- Responsive design with Tailwind CSS
+- TypeScript for type safety
+- Input validation and error handling
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **React i18next** - Internationalization
+
+### Backend
+
+- **Node.js** - JavaScript runtime
+- **Express.js** - Web application framework
+- **TypeScript** - Type-safe backend development
+
+## 📁 Project Structure
+
+```
+property-pilot/
+├── src/                          # Frontend (Next.js)
+│   ├── app/                     # App Router pages
+│   ├── components/              # React components
+│   ├── i18n/                   # Internationalization
+│   └── utils/                  # Utility functions
+├── backend/                     # Backend (Express + TypeScript)
+│   ├── src/
+│   │   ├── controllers/        # API controllers
+│   │   ├── types/             # TypeScript types
+│   │   └── utils/             # Calculation utilities
+│   └── package.json
+├── .github/workflows/          # GitHub Actions
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔌 API Endpoints
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Method | Endpoint                         | Description                      |
+| ------ | -------------------------------- | -------------------------------- |
+| `POST` | `/api/calculate-closing-costs`   | Calculate property closing costs |
+| `POST` | `/api/calculate-occupancy-costs` | Calculate occupancy costs        |
+| `POST` | `/api/calculate-mortgage`        | Calculate mortgage payments      |
+| `GET`  | `/api/health`                    | API health check                 |
