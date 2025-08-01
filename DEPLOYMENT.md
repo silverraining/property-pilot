@@ -1,64 +1,88 @@
-# Property Pilot - Frontend Only Deployment
+# Property Pilot - Vercel Deployment Guide
 
 ## Overview
 
-Version with backend dependencies removed and changed to client-side calculations.
+Frontend-only application with client-side calculations, optimized for Vercel deployment.
 
 ## Major Changes
 
-- Changed backend API calls to client-side calculations
-- Changed URL to `/portfolios/real-estate`
-- Improved calculation speed
+- Removed all backend dependencies
+- Client-side calculations for instant performance
+- Optimized for Vercel deployment
+- Simplified project structure
 
 ## Deployment Methods
 
-### 1. Vercel Deployment (Recommended)
+### 1. Vercel CLI Deployment (Recommended)
 
 ```bash
 # Install Vercel CLI
 npm i -g vercel
 
-# Deploy
+# Deploy to production
 vercel --prod
 ```
 
-### 2. Netlify Deployment
+### 2. Vercel Dashboard Deployment
 
-```bash
-# Build
-npm run build
+1. Go to https://vercel.com
+2. Connect your GitHub repository
+3. Import the project
+4. Deploy automatically
 
-# Deploy to Netlify (using Netlify CLI)
-netlify deploy --prod
+### 3. GitHub Integration
+
+- Push to main branch triggers automatic deployment
+- No additional configuration needed
+
+## Project Structure
+
+```
+property-pilot/
+├── src/
+│   ├── app/                    # Next.js app router
+│   ├── components/             # React components
+│   ├── utils/
+│   │   ├── api.ts             # Client-side API functions
+│   │   └── calculations.ts    # Calculation logic
+│   └── i18n/                  # Internationalization
+├── public/                     # Static assets
+├── package.json               # Dependencies
+└── next.config.ts            # Next.js configuration
 ```
 
-### 3. Static Hosting
-
-```bash
-# Build
-npm run build
-
-# Generate static files
-npm run export
-
-# Upload dist folder to web server
-```
-
-## Environment Configuration
-
-- `NEXT_PUBLIC_BASE_PATH`: `/portfolios/real-estate` (default)
-- Backend environment variables removed
-
-## Performance Improvements
+## Performance Features
 
 - Instant calculation without server requests
 - No network latency
-- Calculations possible even offline
+- Offline calculation capability
+- Optimized bundle size (~100kB)
 
-## URL Structure
+## Available Calculators
 
-- Main: `maplenamu.com/portfolios/real-estate`
-- Closing Costs: `maplenamu.com/portfolios/real-estate/closing-costs`
-- Mortgage: `maplenamu.com/portfolios/real-estate/mortgage`
-- Occupancy Costs: `maplenamu.com/portfolios/real-estate/occupancy-cost-calculator`
-- Rental ROI: `maplenamu.com/portfolios/real-estate/rental-roi`
+- **Closing Costs Calculator**: Calculate property closing costs
+- **Mortgage Calculator**: Estimate monthly mortgage payments
+- **Occupancy Costs Calculator**: Calculate occupancy fees
+- **Rental ROI Calculator**: Analyze rental property returns
+
+## Environment Variables
+
+No environment variables required - all calculations are client-side.
+
+## Build Process
+
+```bash
+# Install dependencies
+pnpm install
+
+# Build for production
+pnpm build
+
+# Start development server
+pnpm dev
+```
+
+## Deployment URL
+
+- **Production**: https://maplenamu-realestate-knyl8hzlw-eunbs-projects.vercel.app
+- **Inspect**: https://vercel.com/eunbs-projects/maplenamu-realestate
