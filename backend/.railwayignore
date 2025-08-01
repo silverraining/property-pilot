@@ -1,2 +1,4 @@
 .nixpacks.toml
-railpack-plan.json 
+railpack-plan.json
+.nixpacks
+railpack 
