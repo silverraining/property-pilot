@@ -605,7 +605,7 @@ export default function Home() {
           <div className="flex items-center justify-center space-x-2">
             <p>&copy; 2025 Maple Namu. All rights reserved.</p>
             <img
-              src="/logo.png"
+              src="/logo1.png"
               alt="Property Pilot Logo"
               className="h-10 w-auto"
             />
